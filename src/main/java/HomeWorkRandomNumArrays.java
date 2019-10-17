@@ -10,7 +10,7 @@ public class HomeWorkRandomNumArrays
     int i, j, ArrayNumber[];
     ArrayNumber = new int[50];
     Random number= new Random();
-    RandomNumber=number.nextInt(15);
+    RandomNumber=number.nextInt(100);
     System.out.println(RandomNumber);
 
     Scanner MyObj= new Scanner(System.in);
@@ -19,10 +19,10 @@ public class HomeWorkRandomNumArrays
     System.out.println("Let the game begin! ");
 
     System.out.println("Please enter your best guess from 0 to 100");
-    i=1;
     int GuessNumber;
         GuessNumber = MyObj.nextInt();
-    do {
+        i=1;
+        do {
             ArrayNumber[i]=GuessNumber;
             i++;
             if (GuessNumber>RandomNumber)
@@ -38,7 +38,7 @@ public class HomeWorkRandomNumArrays
         j=i;
         System.out.printf("Congratulations %s!!!\n", Name);
 
-        for (i=0;i<j;i++)
+        for (i=1;i<j;i++)
         {
             System.out.println(ArrayNumber[i]);
         }
