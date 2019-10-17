@@ -18,8 +18,9 @@ public class HomeWorkRandomNumArrays
 
     System.out.println("Please enter your best guess from 0 to 100");
     int GuessNumber;
-    do {
         GuessNumber = MyObj.nextInt();
+    do {
+
             if (GuessNumber>RandomNumber)
             {
                 System.out.println("Your number is too big. Please, try again");
@@ -28,7 +29,9 @@ public class HomeWorkRandomNumArrays
             {
                 System.out.println("Your number is too small. Please try again");
             }
-        }while(GuessNumber==RandomNumber);
+        GuessNumber = MyObj.nextInt();
+        }while(GuessNumber!=RandomNumber);
+        System.out.printf("Congratulations %s!!!", Name);
     }
 }
 
