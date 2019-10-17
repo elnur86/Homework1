@@ -6,14 +6,29 @@ public class HomeWorkRandomNumArrays
 {
     public static void main(String[] args)
     {
+    int RandomNumber;
     Random number= new Random();
-    System.out.println(number.nextInt(15));
+    RandomNumber=number.nextInt(15);
+    System.out.println(RandomNumber);
 
-    Scanner PlayerName= new Scanner(System.in);
+    Scanner MyObj= new Scanner(System.in);
     System.out.print("Please enter your name: ");
-    String Name = PlayerName.nextLine();
-    System.out.println("Player 1 is: " + Name);
+    String Name = MyObj.nextLine();
+    System.out.println("Let the game begin! ");
 
-
+    System.out.println("Please enter your best guess from 0 to 100");
+    int GuessNumber;
+    do {
+        GuessNumber = MyObj.nextInt();
+            if (GuessNumber>RandomNumber)
+            {
+                System.out.println("Your number is too big. Please, try again");
+            }
+            else
+            {
+                System.out.println("Your number is too small. Please try again");
+            }
+        }while(GuessNumber==RandomNumber);
     }
 }
+
