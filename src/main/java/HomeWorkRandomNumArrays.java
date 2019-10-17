@@ -7,6 +7,8 @@ public class HomeWorkRandomNumArrays
     public static void main(String[] args)
     {
     int RandomNumber;
+    int i, j, ArrayNumber[];
+    ArrayNumber = new int[50];
     Random number= new Random();
     RandomNumber=number.nextInt(15);
     System.out.println(RandomNumber);
@@ -17,10 +19,12 @@ public class HomeWorkRandomNumArrays
     System.out.println("Let the game begin! ");
 
     System.out.println("Please enter your best guess from 0 to 100");
+    i=1;
     int GuessNumber;
         GuessNumber = MyObj.nextInt();
     do {
-
+            ArrayNumber[i]=GuessNumber;
+            i++;
             if (GuessNumber>RandomNumber)
             {
                 System.out.println("Your number is too big. Please, try again");
@@ -31,7 +35,13 @@ public class HomeWorkRandomNumArrays
             }
         GuessNumber = MyObj.nextInt();
         }while(GuessNumber!=RandomNumber);
-        System.out.printf("Congratulations %s!!!", Name);
+        j=i;
+        System.out.printf("Congratulations %s!!!\n", Name);
+
+        for (i=0;i<j;i++)
+        {
+            System.out.println(ArrayNumber[i]);
+        }
     }
 }
 
