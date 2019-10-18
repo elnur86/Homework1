@@ -1,26 +1,24 @@
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class HomeWorkRandomNumArrays
 {
     public static void main(String[] args)
     {
-    int RandomNumber;
-    int i, j,z, ArrayNumber[];
+    int i, j, z, temp, RandomNumber, GuessNumber,ArrayNumber[];
     ArrayNumber = new int[50];
     Random number= new Random();
     RandomNumber=number.nextInt(100);
-    System.out.println(RandomNumber);
+    //System.out.println(RandomNumber);
 
     Scanner MyObj= new Scanner(System.in);
     System.out.print("Please enter your name: ");
     String Name = MyObj.nextLine();
+
     System.out.println("Let the game begin! ");
 
     System.out.println("Please enter your best guess from 0 to 100");
-    int GuessNumber;
-        GuessNumber = MyObj.nextInt();
+    GuessNumber = MyObj.nextInt();
         i=1;
         do {
             ArrayNumber[i]=GuessNumber;
@@ -35,25 +33,21 @@ public class HomeWorkRandomNumArrays
             }
         GuessNumber = MyObj.nextInt();
         }while(GuessNumber!=RandomNumber);
-        z=i;
-        System.out.printf("Congratulations %s!!!\n", Name);
-        for (i=1;i<z;i++)
-        {
-            System.out.print(ArrayNumber[i]);
-            System.out.print(" ");
-        }
 
-        int temp;
+        System.out.printf("Congratulations %s!!!\n", Name);
+        z=i;
+
         for (j=1;j<z;j++)
         {
-        for (i=1;i<z;i++) {
-            if (ArrayNumber[i] < ArrayNumber[i + 1]) {
+        for (i=1;i<z;i++)
+            {
+            if (ArrayNumber[i] < ArrayNumber[i + 1])
+                {
                 temp = ArrayNumber[i];
                 ArrayNumber[i] = ArrayNumber[i + 1];
                 ArrayNumber[i + 1] = temp;
+                }
             }
-        }
-
         }
         System.out.println();
         for (i=1;i<j;i++)
