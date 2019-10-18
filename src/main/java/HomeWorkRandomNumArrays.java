@@ -7,7 +7,7 @@ public class HomeWorkRandomNumArrays
     public static void main(String[] args)
     {
     int RandomNumber;
-    int i, j, ArrayNumber[];
+    int i, j,z, ArrayNumber[];
     ArrayNumber = new int[50];
     Random number= new Random();
     RandomNumber=number.nextInt(100);
@@ -35,12 +35,31 @@ public class HomeWorkRandomNumArrays
             }
         GuessNumber = MyObj.nextInt();
         }while(GuessNumber!=RandomNumber);
-        j=i;
+        z=i;
         System.out.printf("Congratulations %s!!!\n", Name);
+        for (i=1;i<z;i++)
+        {
+            System.out.print(ArrayNumber[i]);
+            System.out.print(" ");
+        }
 
+        int temp;
+        for (j=1;j<z;j++)
+        {
+        for (i=1;i<z;i++) {
+            if (ArrayNumber[i] < ArrayNumber[i + 1]) {
+                temp = ArrayNumber[i];
+                ArrayNumber[i] = ArrayNumber[i + 1];
+                ArrayNumber[i + 1] = temp;
+            }
+        }
+
+        }
+        System.out.println();
         for (i=1;i<j;i++)
         {
-            System.out.println(ArrayNumber[i]);
+            System.out.print(ArrayNumber[i]);
+            System.out.print(" ");
         }
     }
 }
